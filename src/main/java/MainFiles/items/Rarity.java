@@ -37,4 +37,9 @@ public class Rarity implements Serializable {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Skill Rarity: " + rarity;
+    }
 }

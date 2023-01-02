@@ -40,4 +40,11 @@ public class Class implements Serializable {
     public void printLore(){
         System.out.println(classLore);
     }
+
+    @Override
+    public String toString(){
+        return "Class: " + className +
+                ", Lore: " + classLore +
+                ", Skills: " + classSkills;
+    }
 }

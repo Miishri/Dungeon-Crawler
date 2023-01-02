@@ -1,6 +1,7 @@
 package MainFiles.character;
 
 import MainFiles.items.Item;
+import MainFiles.rpgClass.*;
 import MainFiles.rpgClass.Class;
 
 import java.io.Serializable;
@@ -19,9 +20,16 @@ public class Charactor extends Stats implements Serializable {
     public Charactor(String name){
         super();
         characterName = name;
+        characterLevel = 1;
+        characterCoins = 100;
         characterClass = new Class("Human");
         characterSkills = new ArrayList<Skills>();
         characterBag = new ArrayList<Item>();
+        setHP(100);
+        setSTAM(10);
+        setMAGIC(5);
+        setCH(1.0);
+        setDEX(0);
     }
 
     //get characterLevel
@@ -29,6 +37,9 @@ public class Charactor extends Stats implements Serializable {
         return characterLevel;
     }
 
+    public Class getCharacterClass() {
+        return characterClass;
+    }
     //increase level when boss dead or boost
     public void increaseLevel(int addLevel){
         this.characterLevel += addLevel;
@@ -75,14 +86,30 @@ public class Charactor extends Stats implements Serializable {
     //return string representation for the character class
     @Override
     public String toString(){
-        return "USER: " + characterName +
-                "| Level: " + characterLevel +
-                "| Coins: " + characterCoins +
-                "| Class: " + characterLevel +
-                "\n| Skills: " + characterSkills +
-                "| Stats: " + super.toString();
+        return "\n|-----------|\n" +
+                "| USER: " + characterName + "\n" +
+                "| Level: " + characterLevel + "\n" +
+                "| Coins: " + characterCoins + "\n" +
+                "| " + characterClass + "\n" +
+                "| Skills: " + characterSkills +"\n" +
+                "| Stats: " + super.toString() +
+                "\n|-----------|";
     }
 
+    //extra
+    public void setCharacterClass(int input){
+        if (input == 1){
+            characterClass = new Assassin("Assassin");
+        }else if (input == 2){
+            characterClass = new Swordsman("Swordsman");
+        }else if (input == 3){
+            characterClass = new Mage("Mage");
+        }else if (input == 4){
+            characterClass = new Necromancer("Necromancer");
+        }else {
+            System.out.println("Choose the existing classes!");
+        }
+    }
     //GETTER SETTER FOR STATS ---------------------------------------------------------------------------------------
 
     public void setHP(int hp){
