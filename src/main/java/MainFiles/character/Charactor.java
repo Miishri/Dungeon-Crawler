@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class Character extends Stats implements Serializable {
+public class Charactor extends Stats implements Serializable {
 
     private int characterLevel;
     private final String characterName;
@@ -16,7 +16,7 @@ public class Character extends Stats implements Serializable {
     private ArrayList<Skills> characterSkills;
     private ArrayList<Item> characterBag;
 
-    public Character(String name){
+    public Charactor(String name){
         super();
         characterName = name;
         characterClass = new Class("Human");
@@ -53,6 +53,10 @@ public class Character extends Stats implements Serializable {
         }
     }
 
+    //get name
+    public String getName(){
+        return characterName;
+    }
     //add to bag
     public void addToBag(Item item){
         characterBag.add(item);
