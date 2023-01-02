@@ -1,4 +1,4 @@
-package com.character;
+package com.items;
 
 public class Rarity{
     //common, rare, epic, legendary

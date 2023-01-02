@@ -1,5 +1,7 @@
 package com.character;
 
+import com.rpgClass.Class;
+
 import java.util.ArrayList;
 
 public class Character {
@@ -12,9 +14,7 @@ public class Character {
 
     public Character(String name){
         characterName = name;
-        characterLevel = 0;
-        characterCoins = 0.0;
-        characterClass = null;
+        characterClass = new Class("Human");
         characterSkills = new ArrayList<Skills>();
     }
 
@@ -29,7 +29,7 @@ public class Character {
     }
 
     //set string class on use or buy from shop
-    public void setCharacterClass(Class cClass){
+    public void changeCharacterClass(Class cClass){
         characterClass = cClass;
     }
 

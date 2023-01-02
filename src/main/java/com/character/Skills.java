@@ -1,5 +1,7 @@
 package com.character;
 
+import com.items.Rarity;
+
 public class Skills {
 
     private String skillName;
