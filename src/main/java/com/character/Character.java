@@ -33,4 +33,14 @@ public class Character {
         characterClass = cClass;
     }
 
+    //add new skill and level up existing if double
+    public void addSkill(Skills skill){
+        if (!characterSkills.contains(skill)){
+            characterSkills.add(skill);
+        }else {
+            skill.increaseSkillProgressLevel(10);
+        }
+    }
+
+
 }
