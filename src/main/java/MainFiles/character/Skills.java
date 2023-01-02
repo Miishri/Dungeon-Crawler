@@ -1,7 +1,7 @@
-package com.character;
+package MainFiles.character;
 
-import com.Boss.Boss;
-import com.items.Rarity;
+import MainFiles.Boss.Boss;
+import MainFiles.items.Rarity;
 
 public class Skills {
 
@@ -10,7 +10,6 @@ public class Skills {
     private double skillDamage;
     private double percentTillLevel;
     private Rarity skillRarity;
-
 
     public Skills(String name, double damage, Rarity rarity) {
         skillName = name;
@@ -22,7 +21,12 @@ public class Skills {
 
     //skill level up if double
     public void increaseSkillProgressLevel(double level){
-        percentTillLevel += level;
+        if (percentTillLevel + level > 100){
+            skillLevel = 1;
+            percentTillLevel -= level;
+        }else {
+            percentTillLevel += level;
+        }
     }
 
     //use skill by inputting
@@ -35,7 +39,7 @@ public class Skills {
     public String toString(){
         return  "NAME: " + skillName +
                 "| LVL: " + skillLevel +
-                "| Proficiency: " + percentTillLevel +
+                "| Proficiency: " + percentTillLevel + "%" +
                 "\n| DMG: " + skillDamage +
                 "| RARITY: " + skillRarity;
     }

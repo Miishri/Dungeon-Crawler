@@ -1,10 +1,20 @@
-package com.rpgClass;
+package MainFiles.rpgClass;
 
-import com.character.Skills;
+import MainFiles.character.Skills;
+import MainFiles.items.Rarity;
+
+import java.util.ArrayList;
 
 public class Necromancer extends Class{
+    //NECROMANCER SKILLS: LIFE STEAL, SCYTHE SLASH, DEFLECT and REVIVE
+    private ArrayList<Skills> classList;
     public Necromancer(String name) {
         super(name);
+        classList = new ArrayList<>();
+        addSkills(new Skills("Life Steal", 10.0, new Rarity("uncommon")));
+        addSkills(new Skills("Scythe Slash", 30, new Rarity("rare")));
+        addSkills(new Skills("Deflect", 0.0, new Rarity("common")));
+        addSkills(new Skills("Revive", 0.0, new Rarity("epic")));
     }
 
     //add lore to superclass
@@ -20,5 +30,10 @@ public class Necromancer extends Class{
     //print lore
     public void printLore(){
         super.printLore();
+    }
+
+    //print skills that are related to the class
+    public void printSkills(){
+        System.out.println(classList);
     }
 }

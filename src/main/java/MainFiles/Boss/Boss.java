@@ -1,6 +1,4 @@
-package com.Boss;
-
-import com.character.Stats;
+package MainFiles.Boss;
 
 public class Boss {
 
@@ -17,7 +15,7 @@ public class Boss {
     public String getBossName() {
         return bossName;
     }
-    
+
     public void setBossName(String bossName) {
         this.bossName = bossName;
     }

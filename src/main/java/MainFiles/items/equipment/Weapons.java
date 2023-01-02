@@ -1,4 +1,4 @@
-package com.items.equipment;
+package MainFiles.items.equipment;
 
 public class Weapons {
 }

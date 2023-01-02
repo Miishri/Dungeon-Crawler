@@ -1,6 +1,6 @@
-package com.character;
+package MainFiles.character;
 
-import com.rpgClass.Class;
+import MainFiles.rpgClass.Class;
 
 import java.util.ArrayList;
 

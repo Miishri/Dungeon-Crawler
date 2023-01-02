@@ -1,4 +1,4 @@
-package com.character;
+package MainFiles.character;
 
 public class Stats {
 

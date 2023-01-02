@@ -1,4 +1,4 @@
-package com.items;
+package MainFiles.items;
 
 public class Shop {
 }

@@ -1,2 +1,7 @@
-package com;public class Start {
+package MainFiles;
+
+public class Start {
+    public static void main(String[] args) {
+
+    }
 }
