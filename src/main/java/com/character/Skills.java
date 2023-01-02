@@ -1,5 +1,6 @@
 package com.character;
 
+import com.Boss.Boss;
 import com.items.Rarity;
 
 public class Skills {
@@ -24,14 +25,18 @@ public class Skills {
         percentTillLevel += level;
     }
 
+    //use skill by inputting
+    public void useSkill(Boss boss){
+
+    }
+
     //set cooldown based on rarity
     @Override
     public String toString(){
         return  "NAME: " + skillName +
                 "| LVL: " + skillLevel +
-                "| DMG: " + skillDamage +
                 "| Proficiency: " + percentTillLevel +
-                "| RARITY: " + skillRarity
-                ;
+                "\n| DMG: " + skillDamage +
+                "| RARITY: " + skillRarity;
     }
 }

@@ -59,10 +59,10 @@ public class Stats {
     @Override
     public String toString() {
         return  "HP: " + statHealth +
-                "| STAMINA: " + statStamina +
-                "| MAGIC: " + statMagic +
-                "| CRITICAL%: " + statCriticalHit +
-                "| DEX: " + statDexterity
+                "\n| STAMINA: " + statStamina +
+                "\n| MAGIC: " + statMagic +
+                "\n| CRITICAL%: " + statCriticalHit +
+                "\n| DEX: " + statDexterity
                 ;
     }
 }

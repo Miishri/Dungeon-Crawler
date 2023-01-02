@@ -31,7 +31,7 @@ public class Character extends Stats{
 
     //increase coins on randomDrop
     public void increaseCoin(double coins){
-        this.characterCoins += coins;
+        characterCoins += coins;
     }
 
     //set string class on use or buy from shop
@@ -46,6 +46,17 @@ public class Character extends Stats{
         }else {
             skill.increaseSkillProgressLevel(10);
         }
+    }
+
+    //return string representation for the character class
+    @Override
+    public String toString(){
+        return "USER: " + characterName +
+                "| Level: " + characterLevel +
+                "| Coins: " + characterCoins +
+                "| Class: " + characterLevel +
+                "\n| Skills: " + characterSkills +
+                "| Stats: " + super.toString();
     }
 
     //GETTER SETTER FOR STATS ---------------------------------------------------------------------------------------
