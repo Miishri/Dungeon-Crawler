@@ -19,4 +19,20 @@ public class Rarity{
     public String getRarity() {
         return rarity;
     }
+
+    //set rarity on upgrade
+    public void setRarity(String raritySet){
+        if (raritySet.equals("common") ||
+                raritySet.equals("rare") ||
+                raritySet.equals("epic") ||
+                raritySet.equals("legendary")){
+            rarity = raritySet;
+        }else {
+            if (rarity.equals("legendary")){
+                System.out.println("ITEM RARITY IS MAX");
+            }else {
+                System.out.println("RARITY DOES NOT EXIST!");
+            }
+        }
+    }
 }
