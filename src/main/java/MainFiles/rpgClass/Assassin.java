@@ -35,6 +35,8 @@ public class Assassin extends Class{
 
     //print skills that are related to the class
     public void printSkills(){
-        System.out.println(classList);
+        for (Skills eachSkill: classList){
+            System.out.println(eachSkill + "\n");
+        }
     }
 }

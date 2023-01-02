@@ -35,7 +35,7 @@ public class User {
             System.out.println("[3]Mage");
             System.out.println("[4]Necromancer");
             newUserCharacter.setCharacterClass(scanner.nextInt());
-            System.out.println(newUserCharacter.getCharacterClass() + " has been selected as your class!");
+            System.out.println(newUserCharacter.getCharacterClass(). + " \n HAS BEEN SELECTED AS YOUR CLASS!");
 
             os.close();
 

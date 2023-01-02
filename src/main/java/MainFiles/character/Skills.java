@@ -40,9 +40,9 @@ public class Skills implements Serializable {
     @Override
     public String toString(){
         return  "NAME: " + skillName +
-                "| LVL: " + skillLevel +
-                "| Proficiency: " + percentTillLevel + "%" +
-                "\n| DMG: " + skillDamage +
-                "| RARITY: " + skillRarity;
+                "LVL: " + skillLevel +
+                "Proficiency: " + percentTillLevel + "%" +
+                "DMG: " + skillDamage +
+                "RARITY: " + skillRarity;
     }
 }

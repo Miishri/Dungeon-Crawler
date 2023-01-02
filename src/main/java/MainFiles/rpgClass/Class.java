@@ -45,6 +45,6 @@ public class Class implements Serializable {
     public String toString(){
         return "Class: " + className +
                 ", Lore: " + classLore +
-                ", Skills: " + classSkills;
+                ", Skills: \n" + classSkills;
     }
 }
