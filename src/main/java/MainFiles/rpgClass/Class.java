@@ -2,9 +2,10 @@ package MainFiles.rpgClass;
 
 import MainFiles.character.Skills;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Class {
+public class Class implements Serializable {
 
     private String className;
 

@@ -1,0 +1,24 @@
+check for existing character first
+add boolean variable and make it true if exists
+
+tell user about the game
+--
+Welcome to Kiwi RPG!
+There are ten bosses you are supposed to overcome and each boss gives you exp + coins.
+You can do bosses multiple of items, and they can DROP items.
+The more you level up, the higher stats you have, and you can purchase equipment from the shop for extra stats.
+--
+if boolean variable is true then load in character and show details with --Welcome back!--
+otherwise ask for new character creation and ask for username in String only then print character stats
+
+ask for class with [1] - [4] when chosen number show details and ask for confirmation then set character class to it
+
+start the game
+show options for battling, shop and logout
+spawn in boss when choosing battling then add a lore for boss and show HP, fight till either dies
+when your turn show skills and choose skills then show boss again till either dies
+show shop when choosing it show option to buy sell
+when choosing logout then delete old data from save if exists
+if old data does not exist then make a new file and save data
+
+

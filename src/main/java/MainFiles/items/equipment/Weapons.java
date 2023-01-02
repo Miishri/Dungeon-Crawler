@@ -1,4 +1,6 @@
 package MainFiles.items.equipment;
 
-public class Weapons {
+import java.io.Serializable;
+
+public class Weapons implements Serializable {
 }

@@ -1,6 +1,8 @@
 package MainFiles.character;
 
-public class Stats {
+import java.io.Serializable;
+
+public class Stats implements Serializable {
 
     private int statHealth;
     private int statStamina;

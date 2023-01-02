@@ -1,4 +1,6 @@
 package MainFiles.items.equipment;
 
-public class Runes {
+import java.io.Serializable;
+
+public class Runes implements Serializable {
 }

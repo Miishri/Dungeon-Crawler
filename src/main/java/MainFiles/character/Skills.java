@@ -3,7 +3,9 @@ package MainFiles.character;
 import MainFiles.Boss.Boss;
 import MainFiles.items.Rarity;
 
-public class Skills {
+import java.io.Serializable;
+
+public class Skills implements Serializable {
 
     private String skillName;
     private int skillLevel;

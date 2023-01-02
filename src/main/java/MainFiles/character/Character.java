@@ -1,22 +1,27 @@
 package MainFiles.character;
 
+import MainFiles.items.Item;
 import MainFiles.rpgClass.Class;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Character extends Stats{
+
+public class Character extends Stats implements Serializable {
 
     private int characterLevel;
     private final String characterName;
     private double characterCoins;
     private Class characterClass;
     private ArrayList<Skills> characterSkills;
+    private ArrayList<Item> characterBag;
 
     public Character(String name){
         super();
         characterName = name;
         characterClass = new Class("Human");
         characterSkills = new ArrayList<Skills>();
+        characterBag = new ArrayList<Item>();
     }
 
     //get characterLevel
@@ -48,6 +53,21 @@ public class Character extends Stats{
         }
     }
 
+    //add to bag
+    public void addToBag(Item item){
+        characterBag.add(item);
+    }
+
+    //check if it returns null to get proper item
+    public Item getFromBag(Item item){
+        Item itemOne = null;
+        for (Item eachItem: characterBag){
+            if (eachItem.equals(item)){
+                itemOne = eachItem;
+            }
+        }
+        return itemOne;
+    }
     //return string representation for the character class
     @Override
     public String toString(){

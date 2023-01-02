@@ -1,4 +1,6 @@
 package MainFiles.items.equipment;
 
-public class Accessories {
+import java.io.Serializable;
+
+public class Accessories implements Serializable {
 }

@@ -1,6 +1,8 @@
 package MainFiles.Boss;
 
-public class Boss {
+import java.io.Serializable;
+
+public class Boss implements Serializable {
 
     private String bossName;
     private int bossHP;

@@ -1,6 +1,8 @@
 package MainFiles.items;
 
-public class Rarity{
+import java.io.Serializable;
+
+public class Rarity implements Serializable {
     //common, rare, epic, legendary
     private String rarity;
 
