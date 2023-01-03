@@ -64,6 +64,7 @@ public class Boss implements Serializable {
 
     public void attackBoss(Charactor user, Skills skills){
         if (bossHP > skills.getSkillDamage()){
+            System.out.println("You dealt " + skills.getSkillName() + " damage to " + bossName);
             bossHP -= skills.getSkillDamage();
         }else {
             System.out.println(bossName  + "has died!");

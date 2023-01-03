@@ -60,6 +60,7 @@ public class User {
                 System.out.println("| [4] Log out |");
                 System.out.println("|-------------|");
 
+                newUserCharacter.selectWhichMethod();
                 os.close();
 
             } catch (Exception e) {

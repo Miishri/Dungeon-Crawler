@@ -50,6 +50,9 @@ public class Class implements Serializable {
         }
     }
 
+    public Skills getSkill(int number){
+        return classSkills.get(number);
+    }
     @Override
     public String toString(){
         return "Class: " + className +

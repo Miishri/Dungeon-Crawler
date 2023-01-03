@@ -24,7 +24,6 @@ public class Charactor extends Stats implements Serializable {
     private ArrayList<Boss> bossesList;
     private ArrayList<Boss> completedBosses;
 
-    private Scanner scanner = new Scanner(System.in);
 
     public Charactor(String name){
         super();
@@ -33,6 +32,7 @@ public class Charactor extends Stats implements Serializable {
         characterCoins = 100;
         characterClass = new Class("Human");
         characterBag = new ArrayList<Item>();
+        bossesList = new ArrayList<>();
         alive= true;
         //add bosses
         addBoss();
@@ -113,7 +113,9 @@ public class Charactor extends Stats implements Serializable {
     }
 
     //inputs for playing game
-    public void selectWhichMethod(int input) {
+    public void selectWhichMethod() {
+        Scanner scanner = new Scanner(System.in);
+        int input = scanner.nextInt();
         if (input == 1){
             printOptionsAndSelect();
         }else if (input == 2){
@@ -161,14 +163,15 @@ public class Charactor extends Stats implements Serializable {
     }
 
     public void killBoss() {
+        Scanner scanner = new Scanner(System.in);
         printAllBosses();
         System.out.print("Which boss (name)?");
-        while (true){
+        while (alive){
             String bossSelect = scanner.nextLine();
             Boss boss = getBoss(bossSelect);
             System.out.println("Starting fight with " + boss.getBossName());
             System.out.println(boss);
-
+            useCharSkills(boss);
         }
 
     }
@@ -252,18 +255,19 @@ public class Charactor extends Stats implements Serializable {
     }
 
     public void useCharSkills(Boss boss) {
+        Scanner scanner = new Scanner(System.in);
         while (alive){
             System.out.println("Which skills would you like to use?");
             characterClass.printSkills();
             int input = scanner.nextInt();
             if (input == 1){
-
+                boss.attackBoss(this, characterClass.getSkill(input));
             }else if (input == 2){
-
+                boss.attackBoss(this, characterClass.getSkill(input));
             }else if (input == 3){
-
+                boss.attackBoss(this, characterClass.getSkill(input));
             }else if (input == 4){
-
+                boss.attackBoss(this, characterClass.getSkill(input));
             }else {
                 System.out.println("Choose appropriate skill!");
             }
