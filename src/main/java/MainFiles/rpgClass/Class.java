@@ -41,6 +41,15 @@ public class Class implements Serializable {
         System.out.println(classLore);
     }
 
+
+    public void printSkills (){
+        int counter = 1;
+        for (Skills eachSkill: classSkills){
+            System.out.print(counter + ": " +eachSkill.getSkillName() + " | ");
+            counter++;
+        }
+    }
+
     @Override
     public String toString(){
         return "Class: " + className +

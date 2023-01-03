@@ -31,18 +31,56 @@ public class Skills implements Serializable {
         }
     }
 
-    //use skill by inputting
-    public void useSkill(Boss boss){
-
-    }
-
     //set cooldown based on rarity
     @Override
     public String toString(){
-        return  "NAME: " + skillName +
-                "LVL: " + skillLevel +
-                "Proficiency: " + percentTillLevel + "%" +
-                "DMG: " + skillDamage +
-                "RARITY: " + skillRarity;
+        return  "\n" + "NAME: " + skillName +
+                " LVL: " + skillLevel +
+                " Proficiency: " + percentTillLevel + "%" +
+                " DMG: " + skillDamage +
+                " RARITY: " + skillRarity + "\n";
     }
+
+    public String getSkillName() {
+        return skillName;
+    }
+
+    public void setSkillName(String skillName) {
+        this.skillName = skillName;
+    }
+
+    public int getSkillLevel() {
+        return skillLevel;
+    }
+
+    public void setSkillLevel(int skillLevel) {
+        this.skillLevel = skillLevel;
+    }
+
+    public double getSkillDamage() {
+        return skillDamage;
+    }
+
+    public void setSkillDamage(double skillDamage) {
+        this.skillDamage = skillDamage;
+    }
+
+    public double getPercentTillLevel() {
+        return percentTillLevel;
+    }
+
+    public void setPercentTillLevel(double percentTillLevel) {
+        this.percentTillLevel = percentTillLevel;
+    }
+
+    public Rarity getSkillRarity() {
+        return skillRarity;
+    }
+
+    public void setSkillRarity(Rarity skillRarity) {
+        this.skillRarity = skillRarity;
+    }
+
+    //use skill by inputting
+
 }
