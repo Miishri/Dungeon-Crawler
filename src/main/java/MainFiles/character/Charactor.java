@@ -114,6 +114,14 @@ public class Charactor extends Stats implements Serializable {
 
     //inputs for playing game
     public void selectWhichMethod() {
+        System.out.println("|-------------|");
+        System.out.println("| Commands!   |");
+        System.out.println("| [1] Play    |");
+        System.out.println("| [2] Bosses  |");
+        System.out.println("| [3] Shop    |");
+        System.out.println("| [4] Log out |");
+        System.out.println("|-------------|");
+        System.out.println("Which command?");
         Scanner scanner = new Scanner(System.in);
         int input = scanner.nextInt();
         if (input == 1){
@@ -124,6 +132,7 @@ public class Charactor extends Stats implements Serializable {
 
         }else if (input == 4){
             saveAll();
+            System.out.println("See you next time, " + characterName + "!");
         }else {
             System.out.println("Command does not exist!");
         }
@@ -137,25 +146,29 @@ public class Charactor extends Stats implements Serializable {
             outputStream.flush();
             outputStream.writeObject(this);
             outputStream.close();
-
         }catch (Exception e){
             System.out.println("ERROR OCCURED INSIDE saveAll method " + e);
         }
     }
 
-    public boolean printOptionsAndSelect(){
-        System.out.println("[1] Kill new Boss");
-        System.out.println("[2] Stats");
-        System.out.println("[3] Go Back");
+    public void printOptionsAndSelect(){
         Scanner scanner = new Scanner(System.in);
         while (true) {
+            System.out.println("|-------------------|");
+            System.out.println("[1] Kill new Boss");
+            System.out.println("[2] Stats");
+            System.out.println("[3] Go Back");
+            System.out.println("|-------------------|");
+            System.out.println("Which command?");
             int input = scanner.nextInt();
             if (input == 1) {
-
+                killBoss();
             } else if (input == 2) {
-
+                System.out.println(super.toString());
             } else if (input == 3) {
-
+                System.out.println("Going back!");
+                selectWhichMethod();
+                break;
             } else {
                 System.out.println("Choose an appropriate action!");
             }
@@ -168,10 +181,14 @@ public class Charactor extends Stats implements Serializable {
         System.out.print("Which boss (name)?");
         while (alive){
             String bossSelect = scanner.nextLine();
-            Boss boss = getBoss(bossSelect);
-            System.out.println("Starting fight with " + boss.getBossName());
-            System.out.println(boss);
-            useCharSkills(boss);
+            if (getBoss(bossSelect) != null) {
+                Boss boss = getBoss(bossSelect);
+                System.out.println("Starting fight with " + boss.getBossName());
+                System.out.println(boss);
+                useCharSkills(boss);
+            }else {
+                System.out.println("Choose the existing bosses!");
+            }
         }
 
     }
@@ -257,21 +274,24 @@ public class Charactor extends Stats implements Serializable {
     public void useCharSkills(Boss boss) {
         Scanner scanner = new Scanner(System.in);
         while (alive){
+            characterClass.printSkills(characterClass.getSkillList());
             System.out.println("Which skills would you like to use?");
-            characterClass.printSkills();
             int input = scanner.nextInt();
             if (input == 1){
                 boss.attackBoss(this, characterClass.getSkill(input));
+                boss.useBossAttack(this);
             }else if (input == 2){
                 boss.attackBoss(this, characterClass.getSkill(input));
+                boss.useBossAttack(this);
             }else if (input == 3){
                 boss.attackBoss(this, characterClass.getSkill(input));
+                boss.useBossAttack(this);
             }else if (input == 4){
                 boss.attackBoss(this, characterClass.getSkill(input));
+                boss.useBossAttack(this);
             }else {
                 System.out.println("Choose appropriate skill!");
             }
-
         }
     }
     //GETTER SETTER FOR STATS ---------------------------------------------------------------------------------------

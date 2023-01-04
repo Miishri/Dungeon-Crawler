@@ -47,9 +47,10 @@ public class Boss implements Serializable {
     }
 
     //used for boss attack only!
+    //FIX THIS
     public void useBossAttack(Charactor charactor){
         Random randomSkill = new Random();
-        int randomInt = randomSkill.nextInt() * bossSkills.size() - 1;
+        int randomInt = randomSkill.nextInt(bossSkills.size());
 
         double attack = bossSkills.get(randomInt).getSkillDamage();
 
@@ -62,9 +63,10 @@ public class Boss implements Serializable {
         }
     }
 
+    //FIX THIS
     public void attackBoss(Charactor user, Skills skills){
         if (bossHP > skills.getSkillDamage()){
-            System.out.println("You dealt " + skills.getSkillName() + " damage to " + bossName);
+            System.out.println("You dealt " + skills.getSkillDamage() + " damage to " + bossName);
             bossHP -= skills.getSkillDamage();
         }else {
             System.out.println(bossName  + "has died!");
@@ -81,9 +83,18 @@ public class Boss implements Serializable {
     public void setKilled() {
         killed = true;
     }
+
+    public String randomEntranceWord(){
+        Random random = new Random();
+        String[] arrayString = {
+                "power!", "anger!", "annoyance!",
+                "flames!", "displeasure!", "sorrow!",
+                "rage!", " murderous intent!", "enraged feelings!"};
+        return  arrayString[random.nextInt(arrayString.length)];
+    }
     @Override
     public String toString() {
-        return bossName + " has HP: " + bossHP + " comes with delicacy!";
+        return bossName + " has HP: " + bossHP + " comes with " + randomEntranceWord();
     }
 
 }

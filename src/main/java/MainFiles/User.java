@@ -12,7 +12,7 @@ public class User {
         this.scanner = new Scanner(System.in);
     }
     public void userStartGame() {
-        boolean checkForInput = true;
+
         try {
             FileInputStream inputStream = new FileInputStream("rpgData.txt");
             ObjectInputStream is = new ObjectInputStream(inputStream);
@@ -20,13 +20,9 @@ public class User {
             Object readObject = is.readObject();
             Charactor readInChar = (Charactor) readObject;
             System.out.println("Welcome back, " + readInChar.getName() +"!");
-
+            readInChar.selectWhichMethod();
             is.close();
         }catch (Exception e){
-            checkForInput = false;
-        }
-
-        if (!checkForInput) {
             try {
                 FileOutputStream outputStream = new FileOutputStream("rpgData.txt");
                 ObjectOutputStream os = new ObjectOutputStream(outputStream);
@@ -52,19 +48,12 @@ public class User {
                 System.out.println(newUserCharacter.getCharacterClass() + " HAS BEEN SELECTED AS YOUR CLASS!");
                 os.writeObject(newUserCharacter);
                 //INTRO DONE ADD OPTIONS
-                System.out.println("|-------------|");
-                System.out.println("| Commands!   |");
-                System.out.println("| [1] Play    |");
-                System.out.println("| [2] Bosses  |");
-                System.out.println("| [3] Shop    |");
-                System.out.println("| [4] Log out |");
-                System.out.println("|-------------|");
 
                 newUserCharacter.selectWhichMethod();
                 os.close();
 
-            } catch (Exception e) {
-                System.out.println(e);
+            } catch (Exception ex) {
+                System.out.println(ex);
             }
         }
     }

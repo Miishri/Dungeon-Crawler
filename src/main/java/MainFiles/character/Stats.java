@@ -60,11 +60,13 @@ public class Stats implements Serializable {
 
     @Override
     public String toString() {
-        return  "HP: " + statHealth +
+        return  "|----STATS-----|" +
+                "\n| HP: " + statHealth +
                 "\n| STAMINA: " + statStamina +
                 "\n| MAGIC: " + statMagic +
                 "\n| CRITICAL%: " + statCriticalHit +
-                "\n| DEX: " + statDexterity
+                "\n| DEX: " + statDexterity + "\n"
+                + "|------------|"
                 ;
     }
 }

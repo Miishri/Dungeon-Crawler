@@ -42,14 +42,17 @@ public class Class implements Serializable {
     }
 
 
-    public void printSkills (){
+    public void printSkills (ArrayList<Skills> classSkillss){
         int counter = 1;
-        for (Skills eachSkill: classSkills){
-            System.out.print(counter + ": " +eachSkill.getSkillName() + " | ");
+        for (Skills eachSkill: classSkillss){
+            System.out.print(counter + ": " + eachSkill.getSkillName() + " | ");
             counter++;
         }
     }
 
+    public ArrayList<Skills> getSkillList(){
+        return classSkills;
+    }
     public Skills getSkill(int number){
         return classSkills.get(number);
     }
